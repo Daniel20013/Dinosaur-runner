@@ -1,0 +1,116 @@
+body {
+    background-color: rgb(200, 200, 200);
+}
+
+.container {
+    height: 54rem;
+    width: 96rem;
+    background-color: rgb(245, 238, 238);
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    position: relative;
+    left: 2%;
+    top: 2%;
+}
+
+#start {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 5%;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.hrLine {
+    border-top: 1px solid black;
+    position: relative;
+    top: 48%;
+    display: none;
+}
+
+#dinosaur {
+    height: 5rem;
+    position: absolute;
+    top: 45%;
+    transform: translate(-55%);
+    left: 20%;
+    display: none;
+}
+
+#obstacle1 {
+    height: 4rem;
+    position: absolute;
+    top: 47%;
+    right: 2%;
+    visibility: hidden;
+}
+
+#obstacle2 {
+    height: 4rem;
+    position: absolute;
+    top: 47%;
+    right: 2%;
+    visibility: hidden;
+}
+
+#obstacle3 {
+    height: 4rem;
+    position: absolute;
+    top: 47%;
+    right: 2%;
+    visibility: hidden;
+}
+
+#obstacle4 {
+    height: 5rem;
+    position: absolute;
+    top: 45%;
+    right: 2%;
+    visibility: hidden;
+}
+
+#timer {
+    font-size: 2rem;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+#imgGameOver {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 5rem;
+    display: none;
+}
+
+#score {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -80%);
+    font-size: 2rem;
+}
+
+#restart {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -30%);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 5%;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
