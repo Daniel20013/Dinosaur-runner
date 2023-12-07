@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dinosaur runner</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Dinosaur runner</h1>
+        <button id="start" onclick="main()">
+            <img src="assets/start.png" alt="img">
+        </button>
+        <hr class="hrLine">
+        <img id="dinosaur" src="assets/dinosaur.png">
+        <div class="obstacles">
+            <img id="obstacle1" src="assets/obstacle.png" alt="">
+            <img id="obstacle2" src="assets/obstacles 1.png" alt="">
+            <img id="obstacle3" src="assets/obstacles 2.png" alt="">
+            <img id="obstacle4" src="assets/obstacle.png" alt="">
+        </div>  
+        <div id="timer">00:00:00</div>
+        <div class="gameOver">
+            <img id="imgGameOver" src="assets/game over.png" alt="">
+            <p id="score"></p>
+            <button id="restart" onclick="restart()">
+                <img src="assets/Restart.png" alt="">
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
