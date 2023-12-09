@@ -14,7 +14,15 @@ let puncture = 0;
 let jump = true;
 let continueJump = true;
 
+function removeClone() {
+    let cloneObstacles = document.querySelectorAll(".obstacles .move");
+    cloneObstacles.forEach(function(clone) {
+        clone.parentNode.removeChild(clone);
+    });
+}
+
 function gameOver() {
+    removeClone();
     dinosaur.style.display = "none";
     hrLine.style.display = "none";
     imgGameOver.style.display = "block";
@@ -32,10 +40,6 @@ function gameOver() {
     currentPosition = 45;
     const startingPosition = 45;
     dinosaur.style.top = startingPosition + "%";
-    let obstacles = document.querySelectorAll(".obstacles");
-    obstacles.forEach(function(obstacle) {
-        obstacle.parentNode.removeChild(obstacle);
-    });
 }
 
 function collisionObjects(clone) {
@@ -56,7 +60,6 @@ function moveObstacleDecTime() {
     const maxSpeedForMoving = 40;
     if (moveObstacle > maxSpeedForMoving) {
         moveObstacle -= 0.5;
-        console.log("functioneaza");
     }
     const minTime = 1700, decreasesTheTime = 100;
     if (appearanceTime > minTime) {
@@ -68,13 +71,15 @@ function moveObstacleDecTime() {
 
 function obstacles() {
     let imgObstacles = document.querySelector(".obstacles");
-    let obstaclesContainer = [];
-    obstaclesContainer.push(document.getElementById("obstacle1"));
-    obstaclesContainer.push(document.getElementById("obstacle2"));
-    obstaclesContainer.push(document.getElementById("obstacle3"));
-    obstaclesContainer.push(document.getElementById("obstacle4"));
+    let obstaclesContainer = [
+    document.getElementById("obstacle1"),
+    document.getElementById("obstacle2"),
+    document.getElementById("obstacle3"),
+    document.getElementById("obstacle4")
+    ];
     let indexImg = Math.floor(Math.random() * obstaclesContainer.length);
     let clone = obstaclesContainer[indexImg].cloneNode(true);
+    clone.classList.add("move");
     clone.style.visibility = "visible";
     let currentPoObstacle = 2;
     imgObstacles.appendChild(clone);
