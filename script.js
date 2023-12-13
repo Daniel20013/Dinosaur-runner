@@ -66,10 +66,10 @@ function moveObstacleDecTime() {
         appearanceTime -= decreasesTheTime;
     }
     clearInterval(obstaclesIntervalID);
-    obstaclesIntervalID = setInterval(obstacles, appearanceTime);
+    obstaclesIntervalID = setInterval(creatingObstacles, appearanceTime);
 }
 
-function obstacles() {
+function creatingObstacles() {
     let imgObstacles = document.querySelector(".obstacles");
     let obstaclesContainer = [
     document.getElementById("obstacle1"),
@@ -84,7 +84,8 @@ function obstacles() {
     let currentPoObstacle = 2;
     imgObstacles.appendChild(clone);
     const decreasesTheMaxPosition = 92;
-    let interval = setInterval(function() {
+    let interval;
+    interval = setInterval(function() {
         if (currentPoObstacle <= decreasesTheMaxPosition) {
             ++currentPoObstacle;
             clone.style.right = currentPoObstacle + "%";
@@ -157,9 +158,9 @@ function startTimer() {
         let time = pad(hours) + ":" + pad(minutes) + ":" + pad(seconds);
         document.getElementById("timer").textContent = time;
     }, recallToTheSecond);
-    obstacles();
+    creatingObstacles();
     setTimeout(function() {
-        obstacles
+        creatingObstacles();
     }, appearanceTime);
 }
 
